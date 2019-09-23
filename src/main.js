@@ -19,6 +19,22 @@ axios.interceptors.request.use(config => {
     return Promise.reject(error)
 })
 
+var ajax = function (method, data,api) {
+  return new Promise((resolve, reject) => {
+    axios({
+        method, data, url: '/api/' + api, params: method === 'get' ? data : '',
+        headers: {
+            'Content-type': 'application/x-www-form-urlencoded',
+            'Authorization': 'Bearer ' + localStorage.access_token
+        }
+    }).then(res => {
+        console.log(res)
+    }).catch(error => {
+        console.log(error)
+    })
+  })
+}
+
 Vue.prototype.lib = lib
 Vue.prototype.axios = axios
 
