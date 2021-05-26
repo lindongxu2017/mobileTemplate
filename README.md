@@ -1,4 +1,4 @@
-# bni
+# clone 项目后需要将config文件夹的index.js中host修改为本地ip地址或者localhost才能启动项目
 
 > A Vue.js project
 
